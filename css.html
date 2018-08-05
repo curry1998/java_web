@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css简介</title>
+	<style type="text/css">
+		div{
+			background:red;
+			color: blue;
+
+
+		}
+	</style>
+</head>
+<body>
+	1 每个html标签都有一个属性style
+	<div style="background-color:red;" ></div>
+	2 style标签写在头标签中
+	3 style标签中@import url(css的路径)
+	4 head 标签中使用link引入css文件（多用）
+	<link rel="stylesheet" type="text/css" href="css文件的路径">
+	5样式优先级 从上到下 从内到外 优先级从低到高
+		选择器的名称
+
+
+
+	6 css的基本选择器（3种）
+		1标签选择器
+		2类选择器 
+			每个标签都有一个属性为class
+			<div class="123"></div>
+			<head>
+				<style type="text/css">
+					div.123{
+							color: red;
+
+					}
+				</style>
+			</head>
+		3 id选择器
+			每一html标签都有一个属性值为id
+			<div id="haha"></div>
+			<style type="text/css">
+				
+				div#haha{
+					color: red;
+					background-color: blue;
+				}
+			</style>
+		4 优先级
+			标签的style>id选择器>class选择器>标签选择器
+
+
+	7 css 的扩展选择器
+		1 关联选择器
+			div p{
+
+		}
+		2 组合选择器
+			div,p{     div 和p
+
+		}		
+		3 伪元素选择器
+			1 可以设置超链接的状态
+				a:link原始状态
+				a:hover放上去的状态
+				a:active点击状态
+				a:visted点击之后的状态
+	8 css的盒子模型
+		div+css 将数据封装到一个区域中 div操作
+			1边框 border:20px solid blue;
+				上border-top
+				下border-bottom
+				左 border-left
+				右 border-right
+				width='200px'
+
+			2内边距
+			padding
+			3外边距	
+			margin		
+	9 css的布局
+		
+</body>
+</html>

@@ -1,0 +1,92 @@
+jsp
+	1 简介
+	 java service page
+	 动态网页技术标准（其根本就是一个简化版的Servlet）
+	 在html中插入java的程序段 再加上一些jsp的标记 
+	 jsp注重页面的表示（视图） 而servlet更注重逻辑的表示（逻辑的控制）
+	 jsp中有一些内置的对象 而Servlet没有内置的对象
+	2 jsp处理
+		jsp文件--Servlet文件--class文件--servlet实例
+	3jsp语法
+		jsp声明(一个声明语句可以声明一个或多个变量)
+			<%!	declaration;%>
+			<%! int a,b,c,d;%>
+			<%int a; float b;%>
+		jsp表达式（表达式元素可以包含任何符合java语言规范的表达式，但不能以分号结尾）
+			<%= 表达式%>
+			表达式可以嵌入到html标签中
+			<p>现在时间为<%=(new java.util.Date()).toLocalString() %></p>
+		jsp脚本（java的语言片段 可以包括任意量的java语句 变量 方法 和表达式）
+
+			<% java片段 %>
+		jsp的注释
+			<%--注释的内容--%>
+
+		jsp的指令
+			1page指令设置jsp的静态属性（定义页面的依赖属性，比如脚本语言，error页面 缓存需求等）
+
+
+		jsp的内置对象
+			1 request HttpServletReques的实例
+			2 response HttpServletResponse的实例
+			3 out		PrintWriter的实例 用于将结果输出到页面上
+			4 session	HttpSession的实例
+			5 application ServletContext的实例 与应用的上下文有关
+			6 config	ServletConfig类的实例
+			7 page		类似于java类中的this关键字
+JDBC进阶
+		提取所有数据超过JVM内存大小的限制 就会造成内存溢出
+			游标提供一种客户端读取部分服务器端结果集的机制，允许分批读取sql查询的结果
+			使用游标
+				PreparedStatement接口(继承与Statement) 使用游标必须使用该接口
+				通过实现接口的数据可以设计setFetchSize()每次客户端读取数据的多少
+		大字段的读取
+			流方式的机制
+				将大字段以二进制的方式进行划分 划分为多个区间
+
+		大量数据的插入操作
+			批处理方法 通过发送一次sql插入多条数据
+				Statement（运行对象 负责运行SQL语句）
+					三个方法
+						addBatch()将多个sql加入到batch中
+						executeBatch()执行Batch
+						clearBatch()清空Batch
+		中文乱码
+
+数据库连接池DBCP
+	java的架包
+		DBCP连接池
+			包含三个java架包
+				dbcp.jar
+				pool.jar
+				logging.jar
+
+		操作
+			1 创建BasicDataSource对象 BasicDataSource ss= new BasicDataSource()
+			2 设置一定的属性值 ss.setUrl(jdbcurl的格式); 等（设置 完就拥有了一个数据库连接池）
+			3 dbcp的close方法是将连接归还给连接池
+		数据库连接池的高级参数
+			BasicDataSource
+				.serInitialSize()
+				.setMaxTotal()
+				.setMaxWaitMillis()
+
+	数据库安全问题
+		SQL注入与防范
+			用户在输入表单或者url的时候输入SQL命令达到欺骗服务器的效果
+			sql语句的命令语义是在用户输入之后才确定的
+			Sql是动态拼接而成的，新加入的sql改变sql的语义
+
+
+
+
+MyBatis:
+		数据库框架
+		
+
+
+
+
+
+
+

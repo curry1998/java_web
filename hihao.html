@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>htmL test</title>
+</head>
+<body>
+<font size="7" color="red">这是我的第一test</font>
+<!-- 这是注释-->
+<!--这是标题-->
+
+	<h1>这是一个标题</h1><br/>	
+	<h2>这是一个标题</h2>
+	<h3>这是一个标题</h3>
+	<h4></h4>
+	<hr size="1" color="red"/>
+
+<!-- 特殊字符 对特殊字符需要进行转义-->
+	&lt;
+	&gt;
+	&lt;html&gt;：是网页的开始
+	空格&nbsp;&nbsp;空格
+	& &amp;
+	注册符号 &reg;
+4<!--列表标签-->
+	<dl></dl>表示列表的范围
+		<dt></dt>上层结构
+		<dd></dd>下层结构
+	<!--有序列表-->
+	<ol type="a">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+	<!--无须列表-->
+	<ul type="circle">
+		<li></li>
+		<li></li>
+	</ul>
+
+5<!--图像标签-->
+	<img src="图片的路径" width="图片的高度" height="400" alt="图片上的文字" />
+	<img src="">
+6<!--超链接标签-->
+	链接资源
+	<a href="http://baidu.com链接资源的路径和本地文件">百度</a>
+	<a href="" target="打开的方式默认当前页_blank _self默认">搜狐</a>
+	<a href=""></a>
+	定位资源
+	<a name="top" >顶部</a>
+	<a href="#top">回到顶部</a>
+7<!--原样输出-->
+
+	<pre>
+		原样输出输入的内容
+
+	</pre>
+
+8<!--表单标签-->
+	有name属性才会提交到服务器
+	<form action="提交到的地址" method="提价的方式">
+		密码<input type="password" name="paw">密码输入项
+		文本<input type="text" name="">输入项
+		单选  性别<input type="radio" checked="checked" name="1" value="">单选项<input type="radio" name="1">单选二 单选框name的属性值必须要一样 而且必须有value值
+		提交按钮<input type="submmit" name="" value="提交">
+		复选框<input type="checkbox" name="2"> 羽毛球<input type="checkbox" name="2">篮球     复选框必须要有name属性并且一样
+		文件输入项<input type="file" name="">
+		下拉输入项	<select name="">
+					<option value="120"></option>
+					<option value="120"></option>
+
+				</select>
+		文本域<textarea cols="10" rows="10"></textarea> 多用于自我描述
+		隐藏项<input type="hidden" name="">
+		图片的提交<input type="image" src="图片的路径" name="">
+		重置按钮<input type="reset" name="">
+		普通按钮<input type="button" name="">
+
+
+	</form>
+
+
+
+9<!--表格标签-->使数据显示更加格式化
+	<table border="1" bordercolor="blue" cellspacing="0" width="400" height="200">表格的范围
+		<tr align="left">一行
+			<td colspan="3" align="center">/td>单元格
+			<td rowspan="4"></td>
+			<td></td>
+
+		</tr> 
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<th></th>加粗和居中
+		</tr>
+	</table>
+
+
+10<!---->
+</body>
+</html>

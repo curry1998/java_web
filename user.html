@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><input type="button" name="" value="选择" onclicl="add_choice"></td>
+			<td>01</td>
+			<td>小明</td>
+
+		
+	</table>
+
+</body>
+<script type="text/javascript">
+	
+	add_choice(id1,name2)
+	{
+		var old_window=window.opener;//得到引用这个页面的界面
+		old_window.getElementById("id").value=id1;
+		old_window.getElementById("name").value=name2;
+		window.close();
+	}
+</script>
+</html>

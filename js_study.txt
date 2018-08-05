@@ -1,0 +1,521 @@
+javascript
+	js中是没有分号的
+	1基于对象和事件的驱动语言
+	2特点：
+		1 交互性
+		2安全性 js不能访问本地磁盘
+		3跨平台性
+		 支持js的浏览器
+		4弱类型 
+		5解释性语言不需要编译
+	3组成
+		1ecmascript
+			ecma 欧洲计算机协会
+			制定js的语法
+
+		2 bom
+			browser object model 浏览器对象模型
+
+		3dom
+			document object model 
+
+	4 js和html结合
+		1使用标签<script type="text/javascript"> js代码 </script>
+
+		2使用script标签引入一个外部js文件
+			<script type="text/javascript" src="js文件的路径">不会执行其中的代码</script>
+	5基本语法
+		1原始类型（5个）变量var
+			string字符串
+				var str="abc";
+			numbrt数字
+				var m=123;
+			boolean布尔
+				var flag=true;
+			
+			null对象的引用为空
+			undefined		没有赋值的变量
+		2 查看当前变量的数据类型
+			typeof(变量名)
+
+		3 语句
+			1 if判断
+				if(){
+
+				}
+			2 switch()
+				{
+					case:
+					break;
+					case:
+					break;
+					default:
+				}
+			3 for (var i;i<5;i++)
+			{
+
+			}
+		4运算符
+				在js中不区分整数和小数 123/1000=0.123
+				字符串的相加和相减
+				 	加字符串相加 减数值减
+				 ==判断为值与类型没有关系
+				 ===判断值与类型有没有关系
+
+		5 直接向页面输出的语句
+			document.writer("");
+
+7 js数组
+	1定义方式（3种）可以是不同的类型
+		第一种 var ss=[];
+			alert(ss);
+		第二种 var ss=new Array(5);Array中只有一个元素说明是数组的长度
+			ss[0]=1
+		第三种
+			var ss=new Array(3,4,5); 数组中的元素为3,4,5
+	数组中的属性
+		ss.length()获得数组的长度
+8 js的函数
+		1函数的定义三种方式
+			注意函数的参数列表中不需要写var直接写参数名称
+
+			1 function 
+				function 方法名（参数列表）
+				{
+					方法体;
+					返回值可有可无
+				}
+				//调用方法
+				方法名（参数(直接写参数名称)）;
+			2 匿名函数
+				var add=function(参数列表)
+				{
+				方法体；
+				}
+			3动态函数
+			 new Function(参数，方法体)
+9 js的全局变量和局部变量
+		全局变量
+
+
+10 js标签常放在body标签之后
+11 js的重载
+12
+	js的bom对象
+
+13 js的string对象
+		定义var ss="shuhnu";
+		属性 ss.length	
+		方法 1 与html有关的方法
+				ss.bold()使用粗体显示字符串
+				ss.fontcolor(颜色)指定颜色显示字符串
+				ss.fontsize(大小 1到7)指定大小显示字符串
+				ss.link("需要链接到的地址 eg http://www.baidu.com)将字符串显示为需要链接的地址
+				ss.sub()设置下标
+				ss.sup()设置上标
+
+
+			2 与java相似的方法
+				ss.concat("ss")方法 连接字符串
+				ss.charAt()获取指定位置的字符串
+				ss.indexOf("字符串")获取指定位置的字符串 字符串不存在返回-1 多用于检测是否含有某个字符串
+				ss.split()切割字符串 返回一个数组
+				ss.replace(原始的值，替换后的值)替换满足正则表则字符串
+				ss.substring(起始位置，结束位置)提取两个位置之间的字符串
+				ss.substr(起始位置，多少个字符)
+14 js的array对象
+		1创建数组的方式：
+			上面三种
+			var ss=[];
+			var stg=new Array(5);
+		2 数组的属性
+			length 查看数组的长度
+		3 数组的方法
+			concat()连接两个数组
+			ss.join(",")将数组元素连接成一个字符串并通过指定字符串进行分割
+			ss.push()向数组末尾中添加新元素，并返回数组的长度添加数组也是添加一个元素
+			ss.pop() 删除数组中的最后一个元素并返回删除的最后的一个元素
+
+			ss.toString() 将数组转化为
+			ss.reserve()将数组翻转
+15 js 的Date对象
+	 java 获取当前时间java Date dd=new Date();
+	 js获取当前时间
+	 	var date= new Date();
+	 	date.toLocalString()转换成熟悉的格式
+
+	 	获取当前年的方法 date.getFullYear()
+	 			月 date.getMonth() 得到得值+1
+	 			日 date.getDay()
+	 			获取毫秒数 getTime() 获得1970 1 1 至今的毫秒数 使用毫秒数处理缓存
+	 			小时 秒 分钟getHours() getSeconds() getMinutes()
+
+16 js的math对象
+	数学的运算
+	math对象中的方法都是静态方法，可以直接math。进行调用
+		math.sin()	
+		math.cell() 
+			对一个数进行向上舍入
+		math.floor()
+			对一个数进行向下舍入
+		Math.round()
+			对一个数四舍五入最接近的数
+		Math.random()产生一个0到1的随机数
+		Math.floor(Math.random()*10)获取一个0~9的随机整数
+		属性
+			Math.PI
+17 js的全局函数
+	全局函数不属于任何一个对象可以直接写名称调用
+		eval()	执行一段js代码  （如果字符串是js代码 可以直接执行）
+		encodeURL()把字符串编码成url(乱码)
+		decodeURL()解码某个编码的URL	
+		isNaN()判断当前字符串是否是数字
+		parseInt()解析某段字符串并返回一个整数
+			var ss="123";
+			ss=ss.parseInt()
+			alert(ss+1);会执行加一效果 而不会连接字符串
+		parseFloat()
+
+18 js的重载
+	重载 方法名相同 参数不同
+	js 重载 ：不存在重载
+		会调用离它最近满足的函数
+
+		js可以通过模拟实现重载 arguements	
+
+
+
+19 js的bom对象 
+		bom browser object model浏览器对象模型
+		对象
+			navigator获取客户机的信息（浏览器）
+				navigator.appName
+
+			screen客户机屏幕的信息
+				screen.width
+				screen.height
+			location请求的url地址
+								location.href 返回完整的URL地址
+
+							  设置url地址	
+							  点击按钮可以进行页面的跳转 
+							  定义一个鼠标点击事件 在js中定义一个函数 可以执行这个函数
+							  	location.href="跳转的页面";
+
+			history 浏览页面的转换
+				 history.back();到访问的上一个页面
+				 history.forward();下一个页面
+
+
+			window(重点	)窗口对象 window可加可不加
+				window对象是js的顶层对象（所有都在window对象中操作）
+					window.alert() ==alert()
+					window.confirm("是否删除")确定框 返回一个true or false的值
+					window.prompt(text,	defaultText)输入对话框  text 为提示信息 	
+					window.open("url","name","窗口的特征 长宽",) 打开一个新的窗口（新窗口可以为一个页面）
+					window.close()关闭窗口 	
+					模拟定时器（显示系统的当前时间）
+						window.setInterval("js的代码"，时间（毫秒）)每隔特定时间执行js的代码 返回id值
+						window.setTimeout("js",毫秒数)在毫秒数之后执行 但只会执行一次 返回id值
+
+						window.clesrInterval(id)清楚setInterval设置的定时器
+						window.clearTimeout(id)	
+					window.opener()获取创建当前窗口的窗口
+
+
+20 js 的dom对象
+	dom : docunment object model文档对象模型 使用js提供的dom 对象，利用对象的方法和属性 对标记型文档进行操作
+		文档
+			超文本标记文档 eg: html xml
+		对象 
+			属性
+			方法
+		模型
+			使用属性和方法操作超文本标记型文档
+
+		操作
+			将html里面的标签，属性	文本内容都封装成对象
+			解析标记型文档
+				dom解析html过程
+					1会在内存中分配一个树形结构 （html为根结点）
+					2把html 中的每部分都封装成对象  
+					 
+					 	document对象 整个html文档
+					 		每个载入html的文档都会成为document对象
+					 		
+					 		方法
+					 			document.write()向页面输出
+					 			document.getElementById("传入标签里面设置的id的值") 返回一个object
+					 				得到里面的value值
+					 					object.value
+					 					object.name
+					 					也可以进行赋值			
+
+					 			document.getElementsByName("传入标签的name属性") 返回带有指定名称的对象的引用（ 数组形式 ）
+
+					 			document.getElementsByTagName("传入标签")返回的也是数组
+
+
+
+					 	element对象 标签对象
+					 		操作element对象需要首先获得element
+					 			document.getElementById()获取element
+					 		方法
+					 			获取属性里面的值
+					 				getAttribute("标签属性的名称 eg :class");
+					 			设置标签的属性值
+					 				setAttribute("标签属性","设置的值")
+					 			删除标签的属性值
+					 				removeAttribute("标签的属性值")
+					 			获取一个标签的子标签 var ss=ur.childNodes;返回的是一个数组（不同浏览器解析的不一样）
+					 				所以常使用 document.getElements ByTagName("标签") 返回该标签下的所有方法
+					 		 
+					 	标签对象
+					 		pass
+					 	属性对象
+					 		pass	
+					 	Node结点对象
+					 			所有对象的父对象
+					 		Node对象的属性
+					 			父节点 parentNode 
+					 			子节点 childNodes
+					 					firstChild获得第一个子节点 
+					 					lastChild获得最后一个子节点
+					 			同辈结点
+					 				nextSibling 返回一个给定结点的下一个兄弟结点
+					 				previousSlibling 返回给定结点的上一个兄弟结点
+					 			nodeType   标签 属性 文本 的类型	
+					 			nodeValue	标签 属性 文本下 的子节点数
+					 			nodeName    标签 属性 文本 的姓名
+					 			标签结点对应的值
+					 				nodeName	大写的标签名称
+					 				nodeType	1
+					 				nodeValue	null
+					 			属性结点
+					 				nodeName	属性的名称		
+					 				nodeType	2
+					 				nodeValue	属性的值
+
+					 			文本结点
+					 				nodeName	#test
+					 				nodeType	3
+					 				nodeValue	文本内容
+
+		5 操作don树
+			appendChild()添加子节点到末尾 好比剪贴赋值作用
+			父节点.inserBefore(newNode,oldNode) 在某个节点之前插入一个新的结点	
+			removeChild()删除子结点 只能通过父节点删除自己
+			replaceChild(newNode,oldNode)替换结点 也是只能通过父节点进行替换
+
+
+
+		DHTML：很多技术的简称（html(封装数据) css(设置样式) dom(操作html xml) javascript(js的语法语句)）
+
+21 DOM 案例： 在末尾添加元素
+			DOM解析会生成一棵树
+				0 获取ul标签 getElementById("");	
+				1 创建一个li标签  document.creatElement("li") 
+				2 创建一个文本 doucument.createTextNode("添加的文本值")
+				3 将文本加入到li标签下面 			li（变量.appendChild(变量)
+				4 将li加入到ul的下面	ul.appendChild(li1);
+			在文本中添加标签
+				0 获取li3标签
+				1 创建li标签
+				2 创建文本
+				3 将文本添加到li标签中
+				4 获取url
+				5 把li添加到url下面
+
+22 innerHTML 属性
+				作用
+					1 可以获取文本的内容
+						1获取标签
+							var ss=document.getElementById("")
+						2获取内容
+							ss.innerHTML;获取标签里面的内容
+
+
+					2 向标签来设置内容 可以是htmL代码
+						1获取到标签
+							var ss2=document.getElementById("")
+						2设置内容
+							ss2.innerHTML="需要设置的值";
+							ss2.innerHTML="<input>"
+
+23 案例操作 时间的显示
+		1 得到当前时间
+			var date=new Date();
+			var d1=date.toLocalString();
+		2让页面每一秒获取时间
+			setInterval()
+		3 显示到页面
+24 案列操作 全选练习
+			
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
