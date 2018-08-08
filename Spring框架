@@ -1,0 +1,146 @@
+spring（） 
+	spring框架
+		轻量级（依赖的资源少） 一站式（） 开发框架
+		核心技术
+			Ioc (inversion of control)控制翻转
+			Aop (aspected oriented programmer)面向切面编程
+			控制
+				dependency inject 依赖注入
+				容器会帮你将依赖的对象创建好
+		Aop(面向切面的编程)
+			Aop 业务逻辑与非业务逻辑的分离
+				运行时将两个代码进行整合
+		Ioc容器 
+			对象的创建 装配
+			对象生命周期的管理
+			上下文的环境
+			及是开发工具也整合了框架
+		Controller的编写
+		@SpringBootApplication 用于标注在某个类说明这个类是spring boot的主配置类
+			是组合注解
+				@Target(ElementType.TYPE)
+				@Retention(RetentionPolicy.RUNTIME)
+				@Documented
+				@Inherited
+				@SpringBootConfiguration
+				@EnableAutoConfiguration   开启自动配置 springboot自动帮我们配置需要写这些注解
+				@ComponentScan(excludeFilters = {
+				@Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
+				@Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) })  
+			注解的组合
+		配置类也是容器中的组件@Compont
+			@import() spring的底层注解@import 给容器中导入一个组件
+			@responseBody 方法返回的数据 返回到浏览器
+			@controller
+			上面两者的组合 @RestController
+			@Value("")给下面的语句进行赋值
+				eg
+					@Value("${键值对的键}")
+					@Value("#{11*2}")表达式
+			@Value 与 @ConfigurationProperites（prefix="person"）比较
+				功能  一个一个   批量
+				松散语法 不支持   支持
+				spEL 	 支持		不支持
+				复杂类型封装 不支持（只能取出一些基本类型的数据） 支持
+
+			@PropertySource(value={"指定的配置文件 "})	加载指定的配置文件 @ConfigurationProperites不要注释
+
+			@importSource()导入spring中的配置文件 让配置文件里面的内容生效
+
+			@autoWired d对成员变量、方法及构造函数进行标注，完成自动装配的工作	通过@Autowired自动装配方式，从IoC容器中去查找到，并返回给该属性
+POM文件
+	1 父项目 <partent></partent>
+		来管理spring boot 应用
+		导入依赖默认是不需要写版本的（没有在dependencies中管理的依赖 要声明版本号
+	）
+	2 导入的依赖
+		<dependency></dependency>
+			spring-boot-starter	: spring boot 场景启动器（帮助我们导入web模块需要导入的组件）
+	3 spring boot 将所有的功能提取出来 做成一个个starter(启动器) 只要引入starter相应场景的依赖就会引入进来
+resource文件中的
+	application.properties
+		spring boot应用的配置文件（可以修改一些默认设置）
+			server.port="8081"设置端口号
+配置文件
+			全局配置文件
+			修改spring boot自动配置文件
+			yml是yaml（标记语言） 语言文件
+				.yml以数据为中心 比json xml更适合做配置文件
+				yml的基本语法（可以用来表示数组 自变量）
+						k: v （	表示一对键值对（空格必须有））
+						以空格缩进来控制层次关系 （只要左对齐的的一列数据都属于同一层）
+						表示数组 - 表示数组中的一个元素
+
+		配置文件占位符
+			配置文件中可以使用随机数 ${randon.int}
+			属性配置占位符
+				${app.name:默认值} 配置文件引入前面配置过的属性
+		激活指定的profile 
+			1 在配置文件中指定 spring.profiles.active:指定文件
+			2 命令行的方式
+
+
+spring boot与日志
+	日志门面：SLF4J
+	日志实现：Logback
+	spring boot 底层是spring框架 spring 框架默认使用的是JCL	日志
+		spring boot 选用的是SLF4J 和LoginBack
+
+		SLF4j的使用
+			1给项目中导入slf4j和logback的jar包 
+
+
+
+
+
+
+javabean
+		1.JavaBean本身就是一个类，属于Java的面向对象编程。
+
+		2.在JSP中如果要应用JSP提供的Javabean的标签来操作简单类的话，则此类必须满足如下的开发要求：
+
+		(1)所有的类必须放在一个包中，在WEB中没有包的是不存在的；
+
+		(2)所有的类必须声明为public class，这样才能够被外部所访问；
+
+		(3)类中所有的属性都必须封装，即：使用private声明；
+
+		(4)封装的属性如果需要被外部所操作，则必须编写对应的setter、getter方法；
+
+		(5)一个JavaBean中至少存在一个无参构造方法，此为JSP中的标签所使用。  
+
+		第一个简单JavaBean
+
+	xml中的bean标签
+		
+
+
+springboot 实战
+	1创建spring boot 应用  选中我们需要的模块
+	2 springboot默认将这些场景配置好了只需要在配置文件中指定少量配置就可以运行
+	3 编写业务代码
+
+	需要很熟悉自动配置场景： springboot帮我们配置了什么 能不能修改 扩展
+					xxxAutoConfiguration 帮我们在容器中自动配置组件
+					 favicon.ico  图标 放在静态资源文件下
+
+
+
+spring boot  模板引擎
+	spring boot推荐的模板引擎 thymeleaf模板
+	thymeleaf语法
+		th:text="${传入的属性}" 改变当前元素里面的文本内容
+		th:任意属性   来替换原标签属性的值
+		th:insert	片段包含 类似于 jsp中的include指令
+		条件判断		th:each
+					th:if
+					th:switch
+					th:case
+		属性修改
+			th:attr
+			th:attrprepend
+			th:attrappend
+
+
+		2 表达式
+			

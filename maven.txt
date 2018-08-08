@@ -1,0 +1,66 @@
+Maven
+	项目管理工具（项目构建和依赖管理工具）
+		插件式结构
+		很方便的集成ide
+		开源项目使用maven
+			pro.xml:
+				groupId 组织
+				artifactId 项目标识符
+			spring boot 提供了一种快速使用spring的方式
+			spring boot使用 @Controller注解控制构造常见http get 、post请求
+
+	Maven的常用命令
+		mvn -v查看maven的版本
+		mvn -compile 编译
+		mvn -test 测试
+		mvn -package 打包
+		mvn -clean 删除target
+		mvn -install 会将架包安装到本地仓库中 然后可以在pro中添加依赖
+
+	Maven创建目录骨架
+		archetype插件 用于创建符合Maven目录规则的目录骨架
+			src-main-java-目录中放置主代码
+			src-test 中放置测试代码
+		mvn archetype:generate 命令按照提示进行选择
+		mvn archetype:generate -DgropupId=组织名 （一般为公司网址的反写+项目）-DartifactId=项目名 模块名.... 一次性进行设置
+
+	Maven的快速入门
+		<groupId>项目的包名</groupId>
+		<artifactId>模块名</artifactId>
+		<version></version>
+
+
+		<dependencies>	
+			<dependency></denpendency>在本地仓库中寻找架包如果有就会添加 没有就会在maven的中央仓库中寻找 下载并将其放入本地仓库中
+		</dependencies>
+
+		
+	Maven 中的坐标与仓库
+		坐标 
+		仓库 管理项目的依赖
+			分类 本地仓库 远程仓库
+		镜像仓库
+
+	Maven的生命周期 以及插件
+		maven的生命周期
+			clean	清理项目
+			default 构建项目
+
+			site	生成项目的站点
+
+	pom.xml常用元素的介绍（maven的核心项目管理文件）
+		modelVersion指定了pom的版本
+		version版本号（一般有三个数字组成 第一表示大版本号 分支版本号）
+
+
+
+
+
+
+
+
+
+
+
+
+
